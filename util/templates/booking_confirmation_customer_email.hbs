@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .status-pending {
+            color: orange;
+        }
+        .status-success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Booking Summary – {{booking.refNo}}</h2>
+    <p>Dear {{bookingCustomer.customerName}},</p>
+    <p>Thank you for your booking!</p>
+    <p>Your booking has been confirmed. You will receive driver contact details shortly.</p>
+
+    <h2>Booking Details</h2>
+    <table>
+        <tr><td><strong>Trip Reference</strong></td><td>{{tripRef}}</td></tr>
+        <tr><td><strong>Vehicle</strong></td><td>{{vehicleName}}</td></tr>
+        <tr><td><strong>Booking Type</strong></td><td>{{bookingType}}</td></tr>
+        <tr>
+            <td><strong>Status</strong></td>
+            <td class="{{tripStatus == 'Pending' ? 'status-pending' : 'status-success'}}">{{tripStatus}}</td>
+        </tr>
+        <tr><td><strong>Booking Rate</strong></td><td>€{{bookingRate}}</td></tr>
+    </table>
+    <h2>Pickup Details</h2>
+    <table>
+        <tr><td><strong>Pickup Location</strong></td><td>{{pickupLocation}}</td></tr>
+        <tr><td><strong>Pickup Date</strong></td><td>{{pickupDate}}</td></tr>
+        <tr><td><strong>Pickup Time</strong></td><td>{{pickupTime}}</td></tr>
+    </table>
+
+    <h2>Drop Details</h2>
+    <table>
+        <tr><td><strong>Drop Location</strong></td><td>{{dropLocation}}</td></tr>
+    </table>
+
+    <h2>Return Details</h2>
+    <table>
+        <tr><td><strong>Return Pickup Location</strong></td><td>{{returnPickupLocation}}</td></tr>
+        <tr><td><strong>Return Drop Location</strong></td><td>{{returnDropLocation}}</td></tr>
+        <tr><td><strong>Return Pickup Date</strong></td><td>{{returnPickupDate}}</td></tr>
+        <tr><td><strong>Return Pickup Time</strong></td><td>{{returnPickupTime}}</td></tr>
+    </table>
+
+    <p><strong>Next Steps:</strong></p>
+    <ul>
+        <li>Review your booking details carefully.</li>
+        <li>For any modifications, contact our support team.</li>
+        <li>Show this email upon arrival for verification.</li>
+    </ul>
+    <p>If you have any questions, feel free to reach out to us at +33650500226.</p>
+    <p>We look forward to serving you!</p>
+    <p>Best Regards,</p>
+    <p><strong>Paris Disney Transfer</strong></p>
+</body>
+</html>
