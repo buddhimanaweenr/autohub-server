@@ -7,6 +7,7 @@ const AuthRoutes = require("./routes/Auth");
 const UserRoutes = require("./routes/User");
 const VehicleRoutes = require("./routes/Vehicle");
 const VehicleInspectionRoutes = require("./routes/VehicleInspection");
+const QuoteRoutes = require("./routes/Quote");
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.use("/auth", AuthRoutes);
 app.use("/user", UserRoutes);
 app.use("/vehicle", VehicleRoutes);
 app.use("/vehicle-inspection", VehicleInspectionRoutes);
+app.use("/quote", QuoteRoutes);
 
 
 // If route not found
