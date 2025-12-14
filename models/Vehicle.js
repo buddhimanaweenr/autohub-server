@@ -14,6 +14,8 @@ class Vehicle {
         this.transmission = !isEmpty(data.transmission) ? data.transmission : '';
         this.fuelType = !isEmpty(data.fuelType) ? data.fuelType : '';
         this.color = !isEmpty(data.color) ? data.color : '';
+        this.engine = !isEmpty(data.engine) ? data.engine : '';
+        this.drivetrain = !isEmpty(data.drivetrain) ? data.drivetrain : '';
         this.description = !isEmpty(data.description) ? data.description : '';
         this.images = !isEmpty(data.images) ? data.images : [];
         this.isActive = !isEmpty(data.isActive) ? data.isActive : true;
