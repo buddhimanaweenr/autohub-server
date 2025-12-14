@@ -59,6 +59,8 @@ exports.create = async (req, res, next) => {
         transmission: Joi.string().required(),
         fuelType: Joi.string().required(),
         color: Joi.string().allow(''),
+        engine: Joi.string().allow(''),
+        drivetrain: Joi.string().allow(''),
         description: Joi.string().allow(''),
         images: Joi.array().items(Joi.string()).optional()
     })
@@ -76,6 +78,8 @@ exports.create = async (req, res, next) => {
         transmission: !isEmpty(data.transmission) ? data.transmission : '',
         fuelType: !isEmpty(data.fuelType) ? data.fuelType : '',
         color: !isEmpty(data.color) ? data.color : '',
+        engine: !isEmpty(data.engine) ? data.engine : '',
+        drivetrain: !isEmpty(data.drivetrain) ? data.drivetrain : '',
         description: !isEmpty(data.description) ? data.description : '',
         images: !isEmpty(data.images) ? data.images : []
     }
@@ -103,6 +107,8 @@ exports.updateById = async (req, res, next) => {
         transmission: Joi.string().allow(''),
         fuelType: Joi.string().allow(''),
         color: Joi.string().allow(''),
+        engine: Joi.string().allow(''),
+        drivetrain: Joi.string().allow(''),
         description: Joi.string().allow(''),
         images: Joi.array().items(Joi.string()).optional(),
         isActive: Joi.bool().allow()
